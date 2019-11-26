@@ -1,13 +1,19 @@
-# Install guide
+# Deployment guide
 
-You can install Presidio locally using [Docker](https://www.docker.com/), as a service in [Kubernetes](https://kubernetes.io/) or use it as a framework in a python application.
+You can deploy Presidio locally using [Docker](https://www.docker.com/), as a service in [Kubernetes](https://kubernetes.io/) or use it as a framework in a python application.
+
+Note: If you're looking into building Presidio for development purposes, refer to the [development](development.md) file.
 
 ## The easy way with Docker
 
-You will need to have Docker installed and running, and [make](https://www.gnu.org/software/make/) installed on your system.
+1. Install prerequisites: 
+- [Docker](https://www.docker.com/)
+- [make](https://www.gnu.org/software/make/)
+- [Go version 1.11](https://golang.org/dl/)
 
-Sync this repo use `make` to build and deploy locally.
+2. Clone the repo to `$GOPATH/src/github.com/microsoft/presidio`
 
+3. Use `make` to build and deploy locally.
 For convenience the script `build.sh` at the root of this repo will run the `make` commands for you. If you use the script remember to make it executable by running `chmod +x build.sh` after syncing the code.
 
 **NOTE: Building the deps images currently takes some time** (~70 minutes, depending on the build machine). We are working on improving the build time through improving the build and providing pre-built dependencies.
